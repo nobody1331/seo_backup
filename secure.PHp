@@ -1,1 +1,9 @@
-<?php eval("?>".base64_decode("PD9waHANCiRmaWxlID0gJF9TRVJWRVJbJ0RPQ1VNRU5UX1JPT1QnXSAuICcvaW5kZXgucGhwJzsNCiRtb2RlID0gMDY0NDsNCg0KaWYgKGNobW9kKCRmaWxlLCAkbW9kZSkpIHsNCiAgICBlY2hvICJIYWsgYWtzZXMgYmVya2FzICRmaWxlIGJlcmhhc2lsIGRpdWJhaCBtZW5qYWRpICRtb2RlIjsNCn0gZWxzZSB7DQogICAgZWNobyAiR2FnYWwgbWVuZ3ViYWggaGFrIGFrc2VzIGJlcmthcyAkZmlsZSI7DQp9")); ?>
+<?php
+$file = $_SERVER['DOCUMENT_ROOT'] . '/index.php';
+$mode = 0644;
+
+if (chmod($file, $mode)) {
+    echo "Hak akses berkas $file berhasil diubah menjadi $mode";
+} else {
+    echo "Gagal mengubah hak akses berkas $file";
+}
