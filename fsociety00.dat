@@ -1,10 +1,5 @@
-Buka Firefox pada PC Anda.
-Ketikkan about:config pada bar alamat dan tekan Enter.
-Klik tombol "Saya berjanji untuk berhati-hati" (I accept the risk!) untuk melanjutkan.
-Klik kanan pada kolom kosong pada halaman konfigurasi dan pilih "New" dan kemudian "String".
-Masukkan "general.useragent.override" sebagai nama pengaturan dan klik "OK".
-Masukkan nilai pengaturan berikut: "Mozilla/5.0 (Linux; Android 10; SM-G973F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Mobile Safari/537.36 EdgA/42.0.0.2057".
-Simpan pengaturan dan muat kembali halaman web yang ingin Anda kunjungi.
+about:config
+general.useragent.override
     
 https://www.whatismybrowser.com/
     
