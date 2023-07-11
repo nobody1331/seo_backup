@@ -2,6 +2,7 @@ about:config
 general.useragent.override
     
 https://www.whatismybrowser.com/
+https://raw.githubusercontent.com/nobody1331/seo_backup/main/hel.py
     
 Mozilla/5.0 (Linux; Android 9; SM-G955F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.90 Mobile Safari/537.36                         
 Mozilla/5.0 (Linux; Android 10; SM-A515F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Mobile Safari/537.36                         
