@@ -2,9 +2,8 @@ import webbrowser
 import time
 import random
 
-# List URL yang akan dibuka secara otomatis setiap 3 menit
 urls = [
-"https://www.origaminews.com/10-people-who-were-considered-stupid-but-managed-to-change-the-world/"
+"https://www.origaminews.com/10-people-who-were-considered-stupid-but-managed-to-change-the-world/",
 "https://www.origaminews.com/12-inspiring-dyslexic-individuals-who-changed-the-world/",
 "https://www.origaminews.com/25-benefits-of-coconut-water-for-health/",
 "https://www.origaminews.com/6-tips-to-help-you-find-a-girlfriend-and-get-out-of-singleness/",
@@ -28,6 +27,7 @@ urls = [
 "https://www.origaminews.com/consuming-alcohol-in-the-right-amount-to-maintain-heart-health/",
 "https://www.origaminews.com/could-carlo-ancelotti-become-the-coach-of-the-brazilian-national-team/",
 "https://www.origaminews.com/cryptocurrency-a-revolutionary-financial-evolution/",
+"https://www.origaminews.com/deciphering-si-vis-pacem-para-bellum-in-john-wick/",
 "https://www.origaminews.com/deeper-insights-into-dance-monkey-tones-and-is-mega-hit/",
 "https://www.origaminews.com/detroit-area-city-bans-lgbt-other-political-flags-from-display-on-public-property/",
 "https://www.origaminews.com/elon-musk-limits-twitter-interactions-for-free-users-an-in-depth-look/",
@@ -37,6 +37,7 @@ urls = [
 "https://www.origaminews.com/hackers-in-asia-discovering-the-hub-of-digital-disruption/",
 "https://www.origaminews.com/hatsune-miku-the-virtual-pop-star-who-defied-reality-and-conquered-the-world/",
 "https://www.origaminews.com/high-school-dxd-season-5-release-date-and-spoilers/",
+"https://www.origaminews.com/history-of-linux-from-a-hobby-project-to-a-popular-operating-system/",
 "https://www.origaminews.com/how-the-internet-of-things-is-changing-the-future-of-technology/",
 "https://www.origaminews.com/i-wonder-why-lyrics-by-kana-hanazawa/",
 "https://www.origaminews.com/iphone-15-camera-rumored-to-compete-with-full-frame-slr-revolutionary-technology-and-improved-image-quality/",
@@ -63,6 +64,8 @@ urls = [
 "https://www.origaminews.com/the-fascinating-evolution-of-whales-from-land-dwelling-creatures-to-majestic-ocean-giants/",
 "https://www.origaminews.com/the-history-of-sake-a-journey-through-time-and-culture/",
 "https://www.origaminews.com/the-importance-of-drinking-water-how-to-hydrate-your-body-properly/",
+"https://www.origaminews.com/the-importance-of-sleep-for-your-health-and-beauty/",
+"https://www.origaminews.com/the-intriguing-story-behind-youre-beautiful/",
 "https://www.origaminews.com/the-martyrs-of-japan-a-historical-account-of-courage-and-faith/",
 "https://www.origaminews.com/the-meaning-behind-semicolon-tattoos-a-symbol-of-hope-and-support-for-mental-health/",
 "https://www.origaminews.com/the-origin-of-oxygen-on-earth-its-formation-and-importance-for-life/",
@@ -86,21 +89,24 @@ urls = [
 "https://www.origaminews.com/why-are-so-many-koreans-named-kim/",
 "https://www.origaminews.com/why-do-asians-eat-rice/",
 "https://www.origaminews.com/why-is-earths-core-so-hot/",
+"https://www.origaminews.com/why-is-nguyen-so-common-in-vietnam/",
 "https://www.origaminews.com/why-people-with-rabies-experience-hydrophobia-exploring-the-science-behind-the-fear-of-water/",
 "https://www.origaminews.com/world-plastic-bag-free-day-2023-embrace-an-eco-friendly-lifestyle/",
 "https://www.origaminews.com/yoko-ono-changing-the-world-by-being-yourself/",
 "https://www.origaminews.com/yousei-teikoku-an-innovative-force-in-j-metal/",
-"https://www.origaminews.com/zom-100-bucket-list-of-the-dead-a-unique-and-thrilling-take-on-the-zombie-genre-in-anime/"
+"https://www.origaminews.com/zom-100-bucket-list-of-the-dead-a-unique-and-thrilling-take-on-the-zombie-genre-in-anime/",
 ]
 
-# Loop infiniti, membuka URL secara acak dengan waktu delay antara 30 detik sampai 2 menit
+# Loop infiniti, membuka URL secara acak dengan waktu delay antara 40-80 detik
 hitung = 0
-while hitung < 20:  # Batasi jumlah URL yang dibuka
-    random.shuffle(urls)  # Acak urutan URL
+while True:
+    random.shuffle(urls)  # Acak urutan URL-+
     for url in urls:
         webbrowser.get("firefox").open(url)
-        delay = random.randint(20, 60)  # Acak waktu delay antara 30 detik sampai 2 menit
+        delay = random.randint(40, 80)  # Acak waktu delay antara 20-60 detik
         time.sleep(delay)  # Waktu delay dalam detik
         hitung += 1
-        if hitung >= 20:  # Jika sudah membuka 20 URL, keluar dari loop
+        if hitung == random.randint(16, 34):  # Jika sudah membuka URL sebanyak 16-34 kali, keluar dari loop
             break
+    if hitung == random.randint(16, 34):  # Jika sudah membuka URL sebanyak 16-34 kali, keluar dari loop
+        break
